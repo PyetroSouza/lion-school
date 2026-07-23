@@ -22,11 +22,7 @@ main {
     height: 100%;
     display: flex;
     align-items: center;
-    padding-left: 96px;
-    padding-bottom: 98px;
-    padding-top: 98px;
-    padding-right: 96px;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 .slogan{
     display: flex;
