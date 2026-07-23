@@ -24,23 +24,26 @@ main {
     align-items: center;
     justify-content: space-around;
 }
-.slogan{
+
+.slogan {
     display: flex;
     flex-direction: column;
     font-size: 57px;
     width: 490px;
-    gap:44px;
+    gap: 44px;
 }
-.slogan p{
+
+.slogan p {
     font-weight: 200;
 }
+
 .slogan span {
     font-weight: bold;
     color: #3347B0;
 
 }
 
-.botoes{
+.botoes {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -58,11 +61,12 @@ main {
     box-shadow: 12px 12px 6px #3347B080;
 }
 
-.botoes p{
+.botoes p {
     font-size: 64px;
     font-weight: 500;
     color: #FFFFFF;
 }
+
 .sair {
     display: flex;
     align-items: center;
@@ -75,7 +79,7 @@ footer {
     width: 100%;
     display: flex;
     background-color: #3347B0;
-     color: #FFFFFF;
+    color: #FFFFFF;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
@@ -103,7 +107,7 @@ footer {
     gap: 14px;
 }
 
-.copyright{
+.copyright {
     font-size: 20px;
 }
 
@@ -113,12 +117,12 @@ footer {
     gap: 14px;
 }
 
-.redes-sociais{
+.redes-sociais {
     display: flex;
     gap: 20px;
 }
 
-.borda{
+.borda {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -126,4 +130,69 @@ footer {
     border-radius: 100%;
     width: 48px;
     height: 48px;
+}
+
+/* RESPONSIVIDADE MOBILE */
+
+@media (max-width: 480px) {
+
+    header {
+        padding-left: 22px;
+        padding-right: 27px;
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .slogan {
+        font-size: 30px;
+        text-align: center;
+        width: 280px;
+    }
+
+    .slogan img {
+        display: none;
+    }
+
+    .student img {
+        width: 194px;
+        height: 331px;
+    }
+
+    .ds button {
+        width: 175px;
+        height: 175px;
+    }
+
+    .ds button img {
+        display: none;
+    }
+    .ds button p {
+        font-size: 60px;
+    }
+
+    .redes button {
+        width: 175px;
+        height: 175px;
+    }
+
+    .redes button p{
+        font-size: 40px;
+    }
+
+
+    .redes button img {
+        display: none;
+    }
+
+    .sair h1 {
+        display: none;
+    }
+
+    footer {
+        flex-direction: column;
+    }
 }
