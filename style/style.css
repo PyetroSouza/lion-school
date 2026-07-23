@@ -1,19 +1,87 @@
 body {
+    display: flex;
     height: 100vh;
+    flex-direction: column;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #FFFFFF;
 }
 
 header {
+    width: 100%;
     background-color: #3347B0;
-    display: flex;
-    justify-content: space-between;
-}
-
-.row {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    padding-left: 96px;
+    padding-right: 96px;
+    padding-top: 12px;
+    padding-bottom: 12px;
 
 }
 
+main {
+    height: 100%;
+}
+
+.sair {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+
 footer {
+    width: 100%;
+    display: flex;
     background-color: #3347B0;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 116px;
+    padding-right: 116px;
+    padding-bottom: 22px;
+    padding-top: 20px;
+}
+
+.contatos {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.telefone {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.email {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.copyright{
+    font-size: 20px;
+}
+
+.local {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.redes-sociais{
+    display: flex;
+    gap: 20px;
+}
+
+.borda{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid white;
+    border-radius: 100%;
+    width: 48px;
+    height: 48px;
 }
