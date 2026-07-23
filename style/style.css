@@ -1,0 +1,19 @@
+body {
+    height: 100vh;
+}
+
+header {
+    background-color: #3347B0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+
+}
+
+footer {
+    background-color: #3347B0;
+}
