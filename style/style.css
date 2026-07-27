@@ -19,7 +19,7 @@ header {
 }
 
 main {
-    height: 100%;
+    flex: 1;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -153,6 +153,11 @@ footer {
         width: 280px;
     }
 
+    .slogan p {
+        padding-top: 63px;
+        padding-bottom: 54px;
+    }
+
     .slogan img {
         display: none;
     }
@@ -160,6 +165,7 @@ footer {
     .student img {
         width: 194px;
         height: 331px;
+        padding-bottom: 33.88px;
     }
 
     .ds button {
@@ -170,6 +176,7 @@ footer {
     .ds button img {
         display: none;
     }
+
     .ds button p {
         font-size: 60px;
     }
@@ -179,13 +186,46 @@ footer {
         height: 175px;
     }
 
-    .redes button p{
+    .redes button p {
         font-size: 40px;
+    }
+
+    .botoes .redes {
+        padding-bottom: 49px;
     }
 
 
     .redes button img {
         display: none;
+    }
+
+    .contatos {
+        gap: 15px;
+    }
+
+    .contatos :is(.telefone, .email) span {
+        padding-left: 24px;
+    }
+
+    .contatos .local span {
+        padding-left: 30.25px;
+    }
+
+    .local {
+        font-size: 12.5px;
+        padding-bottom: 50px;
+    }
+
+    .redes-sociais {
+        padding-bottom: 50px;
+    }
+
+    .copyright {
+        order: 1;
+    }
+
+    .copyright span {
+        font-size: 7px;
     }
 
     .sair h1 {
@@ -194,5 +234,6 @@ footer {
 
     footer {
         flex-direction: column;
+
     }
 }
