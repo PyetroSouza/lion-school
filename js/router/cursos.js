@@ -16,3 +16,4 @@ export async function getCurso(id) {
 
     return response.json()
 }
+

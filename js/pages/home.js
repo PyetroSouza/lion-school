@@ -1,13 +1,14 @@
 'use strict'
 
 import { getCursos } from "../router/cursos.js"
+import { renderizarPagina } from "../main.js"
 
 export async function criarHome() {
 
     const cursos = await getCursos()
 
-    const main = document.createElement('main')
-    main.id = 'main'
+    const container = document.createElement('div')
+    container.classList.add('home')
 
     const slogan = document.createElement('div')
     slogan.classList.add('slogan')
@@ -30,6 +31,7 @@ export async function criarHome() {
     student.append(imgStudent)
 
     const botoes = document.createElement('div')
+
     botoes.classList.add('botoes')
 
     cursos.forEach(curso => {
@@ -38,6 +40,9 @@ export async function criarHome() {
         div.classList.add(curso.sigla.toLowerCase())
 
         const button = document.createElement('button')
+        button.addEventListener("click", () => {
+            renderizarPagina("curso")
+        })
 
         const img = document.createElement('img')
         img.src = curso.icon
@@ -51,7 +56,7 @@ export async function criarHome() {
         botoes.append(div)
     })
 
-    main.append(slogan, student, botoes)
+    container.append(slogan, student, botoes)
 
-    return main
+    return container
 }
