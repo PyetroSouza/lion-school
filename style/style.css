@@ -61,6 +61,11 @@ main {
     box-shadow: 12px 12px 6px #3347B080;
 }
 
+.botoes button img{
+    width: 96px;
+    height: 77px;
+}
+
 .botoes p {
     font-size: 64px;
     font-weight: 500;

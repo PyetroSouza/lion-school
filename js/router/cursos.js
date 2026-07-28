@@ -2,13 +2,17 @@
 
 const URL = "https://lion-school-phbo.onrender.com/cursos"
 
-export async function getCursos(){
+export async function getCursos() {
     const response = await fetch(URL)
     return response.json()
 }
 
-export async function getCursos(id){
+export async function getCurso(id) {
     const response = await fetch(`${URL}/${id}`)
-    if (!response.ok) throw new Error (`Erro ao buscar o curso de id ${id}`)
-        return response.json()
+
+    if (!response.ok) {
+        throw new Error(`Erro ao buscar o curso de id ${id}`)
+    }
+
+    return response.json()
 }

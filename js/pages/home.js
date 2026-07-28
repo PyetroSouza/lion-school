@@ -1,53 +1,55 @@
 'use strict'
 
-import { renderizarPagina } from "../main.js"
+import { getCursos } from "../router/cursos.js"
 
-export function criarHome() {
+export async function criarHome() {
+
+    const cursos = await getCursos()
+
     const main = document.createElement('main')
+    main.id = 'main'
 
     const slogan = document.createElement('div')
     slogan.classList.add('slogan')
 
     const textSlogan = document.createElement('p')
-    textSlogan.innerHTML = "Escolha um <span>curso</span> para gerencia"
-    
+    textSlogan.innerHTML = 'Escolha um <span>curso</span> para gerenciar'
+
     const imgSlogan = document.createElement('img')
     imgSlogan.src = '../../assents/devices.svg'
     imgSlogan.alt = 'Dispositivos'
 
-    const student = document.createElement("div")
-    student.classList.add("student")
+    slogan.append(textSlogan, imgSlogan)
+
+    const student = document.createElement('div')
+    student.classList.add('student')
 
     const imgStudent = document.createElement('img')
     imgStudent.src = '../../assents/studant.svg'
 
-    const botoes = document.createElement('div') 
-    botoes.classList.add("botoes")
+    student.append(imgStudent)
 
-    const ds = document.createElement("div")
-    ds.classList.add('ds')
-    const buttonDs = document.createElement('button')
-    const imgButtonDs = document.createElement('img')
-    imgButtonDs.src = '../../assents/ds.svg'
+    const botoes = document.createElement('div')
+    botoes.classList.add('botoes')
 
-    const txtButtonDs = document.createElement('p')
-    txtButtonDs.innerHTML = 'DS'
+    cursos.forEach(curso => {
 
-    buttonDs.append(imgButtonDs,txtButtonDs)
+        const div = document.createElement('div')
+        div.classList.add(curso.sigla.toLowerCase())
 
-    const redes = document.createElement("div")
-    redes.classList.add('redes')
-    const buttonRedes = document.createElement('button')
-    const imgButtonRedes = document.createElement('img')
-    imgButtonDs.src = '../../assents/redes.svg'
-    
-    const txtButtonRedes = document.createElement('p')
-    txtButtonDs.innerHTML = 'REDES'
+        const button = document.createElement('button')
 
-    buttonDs.append(imgButtonDs,txtButtonDs)
-    buttonRedes.append(imgButtonRedes, txtButtonRedes)
+        const img = document.createElement('img')
+        img.src = curso.icon
+        img.alt = curso.nome
 
-    botoes.append(ds, redes)
+        const texto = document.createElement('p')
+        texto.textContent = curso.sigla
+
+        button.append(img, texto)
+        div.append(button)
+        botoes.append(div)
+    })
 
     main.append(slogan, student, botoes)
 
