@@ -60,4 +60,4 @@ export async function renderizarPagina(nomePagina, dados = null) {
 
 
 
-renderizarPagina('home')
+renderizarPagina('aluno')

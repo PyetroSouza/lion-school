@@ -231,17 +231,14 @@ main {
     box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.3);
 }
 
-/* --- IMAGEM DO ALUNO --- */
 .card-aluno img {
     width: 130px;
     height: 130px;
     border-radius: 50%;
-    /* Mantém a foto redonda */
     object-fit: cover;
     margin-bottom: 16px;
 }
 
-/* --- NOME DO ALUNO --- */
 .card-aluno h2 {
     font-size: 16px;
     font-weight: 700;
@@ -257,6 +254,103 @@ main {
 .card-aluno.finalizado {
     background-color: #E5B657;
 }
+
+.main-aluno {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 235px;
+    padding: 40px 20px;
+}
+
+.quadrado-aluno {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 500px;
+    height: 500px;
+    background-color: #FFFFFF;
+    border: 1.5px solid #D9D9D9;
+    border-radius: 12px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
+    flex-direction: column;
+    padding: 24px;
+    box-sizing: border-box;
+}
+
+.quadrado-aluno img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    padding-bottom: 22px;
+    object-fit: cover;
+}
+
+.quadrado-aluno .nome {
+    color: #3347B0;
+    font-weight: 700;
+    font-size: 16px;
+    text-align: center;
+}
+
+.quadrado-grafico {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 500px;
+    height: 500px;
+    background-color: #FFFFFF;
+    border: 1.5px solid #D9D9D9;
+    border-radius: 12px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+.coluna-materia {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    gap: 12px;
+}
+
+.barra-fundo {
+    width: 16px;
+    height: 100%;
+    background-color: #EEF1F8;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+}
+
+.barra-progresso {
+    width: 100%;
+}
+
+.sigla,
+.nota {
+    font-weight: 700;
+    font-size: 14px;
+}
+
+
+.azul {
+    color: #3347B0;
+
+}
+
+.vermelho {
+    color: #C13030;
+
+}
+
+.amarelo {
+    color: #E5B657;
+
+}
+
+
 
 
 footer {
@@ -320,6 +414,7 @@ footer {
 
 @media (max-width: 480px) {
 
+    /* --- HEADER --- */
     .header-logo {
         padding-left: 16px;
         padding-right: 16px;
@@ -334,6 +429,7 @@ footer {
         display: none;
     }
 
+    /* --- HOME / LANDING PAGE --- */
     main {
         width: 100%;
         flex-direction: column;
@@ -364,7 +460,7 @@ footer {
         line-height: 1.2;
     }
 
-
+    /* Ilustração da Estudante */
     .student {
         display: flex;
         justify-content: center;
@@ -376,41 +472,55 @@ footer {
     }
 
     .student img {
+
         width: 194px;
         height: auto;
         padding-bottom: 33px;
+
     }
 
 
     .botoes .redes {
+
         padding-bottom: 49px;
+
     }
-
-
 
     .ds button,
     .redes button {
+
         width: 175px;
         height: 175px;
     }
-
-
 
     .ds button img,
     .redes button img {
         display: none;
     }
 
-
-
     .ds button p {
         font-size: 60px;
     }
 
-
-
     .redes button p {
         font-size: 40px;
+    }
+
+    .main-aluno {
+        flex-direction: column;
+        padding: 20px 16px;
+        gap: 20px;
+    }
+
+    .quadrado-aluno,
+    .quadrado-grafico {
+        width: 100%;
+        height: auto;
+    }
+
+    .quadrado-grafico {
+        height: 320px;
+        padding: 20px 16px;
     }
 
     footer {

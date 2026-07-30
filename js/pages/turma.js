@@ -42,12 +42,10 @@ export function filtrarAlunosPorStatus(statusFiltro) {
     }
 }
 
-// Configura o dropdown com textos coloridos
 function ativarMenuStatus() {
     const statusUl = document.querySelector('.status ul')
     if (!statusUl) return
 
-    // Monta o menu sem o quadradinho e aplica classes de cores nos textos
     statusUl.innerHTML = `
         <li data-status="todos" class="status-opcao opcao-todos">Status</li>
         <li data-status="cursando" class="status-opcao opcao-cursando">Cursando</li>
@@ -61,7 +59,6 @@ function ativarMenuStatus() {
         const statusSelecionado = li.getAttribute('data-status')
         filtrarAlunosPorStatus(statusSelecionado)
 
-        // Fecha o menu após a escolha
         const details = statusUl.closest('details')
         if (details) details.removeAttribute('open')
     }
