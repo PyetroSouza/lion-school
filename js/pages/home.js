@@ -41,7 +41,7 @@ export async function criarHome() {
 
         const button = document.createElement('button')
         button.addEventListener("click", () => {
-            renderizarPagina("curso")
+            renderizarPagina("curso", curso)
         })
 
         const img = document.createElement('img')
