@@ -4,7 +4,6 @@ import { getAlunosByIdCurso } from "../router/aluno.js"
 
 let alunosDoCursoAtual = []
 
-// Função para renderizar/re-renderizar os cards no container
 function renderizarCardsContainer(alunosParaExibir) {
     const containerCards = document.querySelector('.cards-alunos')
     if (!containerCards) return
@@ -32,7 +31,6 @@ function renderizarCardsContainer(alunosParaExibir) {
     })
 }
 
-// Função de filtro chamada no clique
 export function filtrarAlunosPorStatus(statusFiltro) {
     if (!statusFiltro || statusFiltro === 'todos') {
         renderizarCardsContainer(alunosDoCursoAtual)
@@ -44,42 +42,38 @@ export function filtrarAlunosPorStatus(statusFiltro) {
     }
 }
 
-// Configura os cliques do menu dropdown de status do Header
+// Configura o dropdown com textos coloridos
 function ativarMenuStatus() {
     const statusUl = document.querySelector('.status ul')
-    
     if (!statusUl) return
 
-    // Se a lista de status ainda não tem as opções Cursando, Finalizado e Todos, criamos elas:
+    // Monta o menu sem o quadradinho e aplica classes de cores nos textos
     statusUl.innerHTML = `
-        <li data-status="todos" style="cursor: pointer;">Todos</li>
-        <li data-status="cursando" style="cursor: pointer;">Cursando</li>
-        <li data-status="finalizado" style="cursor: pointer;">Finalizado</li>
+        <li data-status="todos" class="status-opcao opcao-todos">Status</li>
+        <li data-status="cursando" class="status-opcao opcao-cursando">Cursando</li>
+        <li data-status="finalizado" class="status-opcao opcao-finalizado">Finalizado</li>
     `
 
-    // Adiciona evento de clique na lista
-    statusUl.addEventListener('click', (event) => {
+    statusUl.onclick = (event) => {
         const li = event.target.closest('li')
         if (!li) return
 
         const statusSelecionado = li.getAttribute('data-status')
         filtrarAlunosPorStatus(statusSelecionado)
 
-        // Fecha o dropdown do <details> após clicar
+        // Fecha o menu após a escolha
         const details = statusUl.closest('details')
         if (details) details.removeAttribute('open')
-    })
+    }
 }
 
 export async function criarTurma(curso) {
     const main = document.createElement('div')
     main.classList.add('turmas')
 
-    // Busca os alunos do curso selecionado
     const todosAlunos = await getAlunosByIdCurso(curso.id)
     alunosDoCursoAtual = todosAlunos.filter(aluno => Number(aluno.curso_id) === Number(curso.id))
 
-    // Título
     const tituloAlunos = document.createElement('div')
     tituloAlunos.classList.add('titulo-alunos')
 
@@ -89,15 +83,13 @@ export async function criarTurma(curso) {
     tituloAlunos.appendChild(titulo)
     main.appendChild(tituloAlunos)
 
-    // Container de cards
     const containerCards = document.createElement('div')
     containerCards.classList.add('cards-alunos')
     main.appendChild(containerCards)
 
-    // Renderiza inicialmente todos os alunos do curso
     setTimeout(() => {
         renderizarCardsContainer(alunosDoCursoAtual)
-        ativarMenuStatus() // Ativa os cliques no menu de status
+        ativarMenuStatus()
     }, 0)
 
     return main

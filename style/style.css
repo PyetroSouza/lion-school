@@ -320,26 +320,55 @@ footer {
 
 @media (max-width: 480px) {
 
-    header {
-        padding-left: 22px;
-        padding-right: 27px;
+    .header-logo {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .header-logo img {
+        max-width: 130px;
+        height: auto;
+    }
+
+    .sair h1 {
+        display: none;
     }
 
     main {
-        display: flex;
+        width: 100%;
         flex-direction: column;
         align-items: center;
     }
 
+    .home,
+    .main-home {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
+        padding-top: 20px;
+        padding-bottom: 40px;
+    }
+
     .slogan {
-        font-size: 30px;
+        width: 100%;
+        max-width: 280px;
+        font-size: 28px;
         text-align: center;
-        width: 280px;
+        gap: 0;
     }
 
     .slogan p {
-        padding-top: 63px;
-        padding-bottom: 54px;
+        font-weight: 300;
+        line-height: 1.2;
+    }
+
+
+    .student {
+        display: flex;
+        justify-content: center;
+        margin: 20px 0;
     }
 
     .slogan img {
@@ -348,76 +377,67 @@ footer {
 
     .student img {
         width: 194px;
-        height: 331px;
-        padding-bottom: 33.88px;
+        height: auto;
+        padding-bottom: 33px;
     }
 
-    .ds button {
-        width: 175px;
-        height: 175px;
-    }
-
-    .ds button img {
-        display: none;
-    }
-
-    .ds button p {
-        font-size: 60px;
-    }
-
-    .redes button {
-        width: 175px;
-        height: 175px;
-    }
-
-    .redes button p {
-        font-size: 40px;
-    }
 
     .botoes .redes {
         padding-bottom: 49px;
     }
 
 
+
+    .ds button,
+    .redes button {
+        width: 175px;
+        height: 175px;
+    }
+
+
+
+    .ds button img,
     .redes button img {
         display: none;
     }
 
-    .contatos {
-        gap: 15px;
+
+
+    .ds button p {
+        font-size: 60px;
     }
 
-    .contatos :is(.telefone, .email) span {
-        padding-left: 24px;
-    }
 
-    .contatos .local span {
-        padding-left: 30.25px;
-    }
 
-    .local {
-        font-size: 12.5px;
-        padding-bottom: 50px;
-    }
-
-    .redes-sociais {
-        padding-bottom: 50px;
-    }
-
-    .copyright {
-        order: 1;
-    }
-
-    .copyright span {
-        font-size: 7px;
-    }
-
-    .sair h1 {
-        display: none;
+    .redes button p {
+        font-size: 40px;
     }
 
     footer {
         flex-direction: column;
+        padding: 24px 20px;
+        gap: 20px;
+        text-align: center;
+        box-sizing: border-box;
+    }
 
+    .contatos {
+        align-items: center;
+        gap: 12px;
+    }
+
+    .contatos :is(.telefone, .email, .local) {
+        justify-content: center;
+        font-size: 13px;
+    }
+
+    .redes-sociais {
+        justify-content: center;
+        padding-bottom: 0;
+    }
+
+    .copyright {
+        order: 1;
+        font-size: 11px;
     }
 }
