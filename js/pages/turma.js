@@ -1,6 +1,7 @@
 'use strict'
 
 import { getAlunosByIdCurso } from "../router/aluno.js"
+import { renderizarPagina } from "../main.js"
 
 let alunosDoCursoAtual = []
 
@@ -12,6 +13,9 @@ function renderizarCardsContainer(alunosParaExibir) {
 
     alunosParaExibir.forEach(aluno => {
         const card = document.createElement('div')
+        card.addEventListener("click", () => {
+            renderizarPagina("aluno", aluno.id)
+        })
         card.classList.add('card-aluno')
 
         const statusClass = aluno.status ? aluno.status.toLowerCase().trim() : ''
@@ -35,7 +39,7 @@ export function filtrarAlunosPorStatus(statusFiltro) {
     if (!statusFiltro || statusFiltro === 'todos') {
         renderizarCardsContainer(alunosDoCursoAtual)
     } else {
-        const filtrados = alunosDoCursoAtual.filter(aluno => 
+        const filtrados = alunosDoCursoAtual.filter(aluno =>
             aluno.status.toLowerCase().trim() === statusFiltro.toLowerCase().trim()
         )
         renderizarCardsContainer(filtrados)

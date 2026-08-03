@@ -17,7 +17,7 @@ export async function criarHome() {
     textSlogan.innerHTML = 'Escolha um <span>curso</span> para gerenciar'
 
     const imgSlogan = document.createElement('img')
-    imgSlogan.src = '../../assents/devices.svg'
+    imgSlogan.src = './assents/devices.svg'
     imgSlogan.alt = 'Dispositivos'
 
     slogan.append(textSlogan, imgSlogan)
@@ -26,7 +26,7 @@ export async function criarHome() {
     student.classList.add('student')
 
     const imgStudent = document.createElement('img')
-    imgStudent.src = '../../assents/studant.svg'
+    imgStudent.src = './assents/studant.svg'
 
     student.append(imgStudent)
 

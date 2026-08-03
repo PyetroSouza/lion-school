@@ -255,12 +255,12 @@ main {
     background-color: #E5B657;
 }
 
-.main-aluno {
+.aluno {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 235px;
-    padding: 40px 20px;
+    padding-top: 150px;
+    justify-content: space-around;
 }
 
 .quadrado-aluno {
@@ -272,15 +272,15 @@ main {
     background-color: #FFFFFF;
     border: 1.5px solid #D9D9D9;
     border-radius: 12px;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
+    box-shadow: 0px 4px 4px rgba(51, 71, 176, 0.25);
     flex-direction: column;
     padding: 24px;
     box-sizing: border-box;
 }
 
 .quadrado-aluno img {
-    width: 180px;
-    height: 180px;
+    width: 250px;
+    height: 250px;
     border-radius: 50%;
     padding-bottom: 22px;
     object-fit: cover;
@@ -326,30 +326,36 @@ main {
 
 .barra-progresso {
     width: 100%;
+
+}
+
+.barra-progresso.azul {
+    background-color: #3347B0;
+    box-shadow: 0px 0px 8px rgba(51, 71, 176, 0.5);
+}
+
+.barra-progresso.vermelho {
+    background-color: #C13030;
+    box-shadow: 0px 0px 8px rgba(193, 48, 48, 0.5);
+}
+
+.barra-progresso.amarelo {
+    background-color: #E5B657;
+    box-shadow: 0px 0px 8px rgba(229, 182, 87, 0.5);
 }
 
 .sigla,
-.nota {
-    font-weight: 700;
-    font-size: 14px;
-}
-
-
-.azul {
+.nota.azul {
     color: #3347B0;
-
 }
 
-.vermelho {
+.nota.vermelho {
     color: #C13030;
-
 }
 
-.amarelo {
+.nota.amarelo {
     color: #E5B657;
-
 }
-
 
 
 
@@ -460,7 +466,6 @@ footer {
         line-height: 1.2;
     }
 
-    /* Ilustração da Estudante */
     .student {
         display: flex;
         justify-content: center;
@@ -478,7 +483,6 @@ footer {
         padding-bottom: 33px;
 
     }
-
 
     .botoes .redes {
 
@@ -549,5 +553,21 @@ footer {
     .copyright {
         order: 1;
         font-size: 11px;
+    }
+
+    .aluno {
+        flex-direction: column;
+        padding-top: 69px;
+        gap: 59px;
+    }
+
+    .quadrado-aluno {
+        width: 201px;
+        height: 300px;
+    }
+
+    .quadrado-aluno img {
+        width: 160px;
+        height: 160px;
     }
 }

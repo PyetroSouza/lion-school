@@ -22,7 +22,6 @@ export async function getAluno(id) {
     return response.json()
 }
 
-// CORREÇÃO AQUI: 'curso_id' em vez de 'cursos_id' ou 'curso'
 export async function getAlunosByIdCurso(idCurso) {
     const response = await fetch(`${URL}?curso_id=${idCurso}`)
 

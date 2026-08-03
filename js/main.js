@@ -4,8 +4,9 @@
 
 import { criarHome } from './pages/home.js'
 import { criarTurma } from './pages/turma.js'
-/* import {criarTurma} from './pages/aluno.js' */
+import { criarAluno } from './pages/aluno.js'
 
+let cursoAtual = null
 
 const paginas = {
     home: {
@@ -23,27 +24,31 @@ const paginas = {
         acaoHeader: function () {
             renderizarPagina("home")
         }
-    },/*  
-    alunos: {
+    },
+    aluno: {
         titulo: "Alunos",
         renderizar: criarAluno,
-        acaoHeader: function () {
-        renderizarPagina("curso")
+        textoHeader: "Voltar",
+        acaoHeader() {
+            renderizarPagina("curso", cursoAtual)
         }
-    } */
+    }
 }
 
 const botaoHeader = document.getElementById('botao-header')
 const textoHeader = document.getElementById('texto-header')
 
 export async function renderizarPagina(nomePagina, dados = null) {
+
     const main = document.getElementById('main')
     const headerStatus = document.getElementById("header-status")
-
-    if (nomePagina === "home") {
-        headerStatus.classList.add("oculto")
-    } else {
+    if (nomePagina === "curso") {
+        cursoAtual = dados
+    }
+    if (nomePagina === "curso") {
         headerStatus.classList.remove("oculto")
+    } else {
+        headerStatus.classList.add("oculto")
     }
 
     main.className = `main-${nomePagina}`
@@ -60,4 +65,4 @@ export async function renderizarPagina(nomePagina, dados = null) {
 
 
 
-renderizarPagina('aluno')
+renderizarPagina('home')
